@@ -33,7 +33,7 @@ jobs:
           dotnet build ./src -f net9.0-android
 
   Build_iOS:
-    runs-on: macos-14
+    runs-on: macos-15
 
     steps:
       - uses: actions/checkout@v1
@@ -61,7 +61,7 @@ jobs:
           dotnet build ./src -f net9.0-ios
           
   Build_MacCatalyst:
-    runs-on: macos-14
+    runs-on: macos-15
 
     steps:
       - uses: actions/checkout@v1
