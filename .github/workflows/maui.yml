@@ -1,5 +1,8 @@
 name: .NET MAUI
 
+env:
+    xcode-version: '26.1'
+
 on:
   push:
     branches:
@@ -54,7 +57,7 @@ jobs:
       - name: Install Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: latest-stable
+          xcode-version: ${{ env.xcode-version }}
 
       - name: Build iOS App
         run: |
@@ -82,7 +85,7 @@ jobs:
       - name: Install Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: latest-stable
+          xcode-version: ${{ env.xcode-version }}
 
       - name: Build macOS App
         run: |
