@@ -3,13 +3,8 @@ using static CommunityToolkit.Maui.Markup.GridRowsColumns;
 
 namespace HackerNews;
 
-public class StoryDataTemplate : DataTemplate
+public class StoryDataTemplate() : DataTemplate(CreateGrid)
 {
-	public StoryDataTemplate() : base(CreateGrid)
-	{
-
-	}
-
 	static Grid CreateGrid() => new()
 	{
 		RowSpacing = 1,
@@ -21,7 +16,7 @@ public class StoryDataTemplate : DataTemplate
 
 		Children =
 		{
-			new Label()
+			new Label { LineBreakMode = LineBreakMode.TailTruncation }
 				.Row(Row.Title).Top()
 				.Font(size: 16).TextColor(ColorConstants.TextCellTextColor)
 				.Paddings(10, 0, 10, 0)
@@ -30,6 +25,7 @@ public class StoryDataTemplate : DataTemplate
 			new Label()
 				.Row(Row.Description)
 				.Font(size: 13).TextColor(ColorConstants.TextCellDetailColor)
+				.Paddings(10, 0, 10, 0)
 				.Bind(Label.TextProperty, static (StoryModel m) => m.Description, mode: BindingMode.OneTime)
 		}
 	};

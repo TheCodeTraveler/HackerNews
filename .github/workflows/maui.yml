@@ -18,10 +18,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Setup .NET v9.0
+      - name: Setup .NET v10.0
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: "9.0.x"
+          dotnet-version: "10.0.x"
 
       - name: Install .NET MAUI Workload
         run: |
@@ -33,7 +33,7 @@ jobs:
 
       - name: Build Android App
         run: |
-          dotnet build ./src -f net9.0-android
+          dotnet build ./src -f net10.0-android
 
   Build_iOS:
     runs-on: macos-15
@@ -41,10 +41,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Setup .NET v9.0
+      - name: Setup .NET v10.0
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: "9.0.x"
+          dotnet-version: "10.0.x"
 
       - name: Install .NET MAUI Workload
         run: |
@@ -61,7 +61,7 @@ jobs:
 
       - name: Build iOS App
         run: |
-          dotnet build ./src -f net9.0-ios
+          dotnet build ./src -f net10.0-ios
           
   Build_MacCatalyst:
     runs-on: macos-15
@@ -69,10 +69,10 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Setup .NET v9.0
+      - name: Setup .NET v10.0
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: "9.0.x"
+          dotnet-version: "10.0.x"
 
       - name: Install .NET MAUI Workload
         run: |
@@ -89,7 +89,7 @@ jobs:
 
       - name: Build macOS App
         run: |
-          dotnet build ./src -f net9.0-maccatalyst
+          dotnet build ./src -f net10.0-maccatalyst
 
   Build_Windows:
     runs-on: windows-latest
@@ -102,10 +102,10 @@ jobs:
           distribution: 'microsoft'
           java-version: '17'
 
-      - name: Setup .NET v9.0
+      - name: Setup .NET v10.0
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: "9.0.x"
+          dotnet-version: "10.0.x"
 
       - name: Install .NET MAUI Workload
         run: |

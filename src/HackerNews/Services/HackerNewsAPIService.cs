@@ -1,11 +1,9 @@
 ﻿namespace HackerNews;
 
-class HackerNewsAPIService
+class HackerNewsAPIService(IHackerNewsAPI hackerNewsClient)
 {
-	readonly IHackerNewsAPI _hackerNewsClient;
+	readonly IHackerNewsAPI _hackerNewsClient = hackerNewsClient;
 
-	public HackerNewsAPIService(IHackerNewsAPI hackerNewslient) => _hackerNewsClient = hackerNewslient;
-
-	public Task<StoryModel> GetStory(long storyId) => _hackerNewsClient.GetStory(storyId);
-	public Task<IReadOnlyList<long>> GetTopStoryIDs() => _hackerNewsClient.GetTopStoryIDs();
+	public Task<StoryModel> GetStory(long storyId, CancellationToken token) => _hackerNewsClient.GetStory(storyId, token);
+	public Task<IReadOnlyList<long>> GetTopStoryIDs(CancellationToken token) => _hackerNewsClient.GetTopStoryIDs(token);
 }
