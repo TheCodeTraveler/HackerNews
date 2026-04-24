@@ -51,7 +51,7 @@
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
     <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="10.5.0" />
     <PackageReference Include="Microsoft.Maui.Controls" Version="10.0.51" />
-    <PackageReference Include="Refit.HttpClientFactory" Version="9.0.2" />
+    <PackageReference Include="Refit.HttpClientFactory" Version="10.1.6" />
   </ItemGroup>
   
 </Project>
