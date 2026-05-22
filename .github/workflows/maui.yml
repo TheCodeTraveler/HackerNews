@@ -1,7 +1,7 @@
 name: .NET MAUI
 
 env:
-    xcode-version: '26.4'
+    xcode-version: '^26'
 
 on:
   push:
